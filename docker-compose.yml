@@ -1,0 +1,41 @@
+version: '2'
+
+networks:
+  app-tier:
+    driver: bridge
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecommerce_be_container
+    env_file:
+      - .env
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgresql-master
+    restart: always
+    networks:
+      - app-tier
+
+  postgresql-master:
+    image: docker.io/bitnami/postgresql:14
+    container_name: ecommerce_db_container
+    volumes:
+      - 'postgresql_master_data:/bitnami/postgresql'
+    environment:
+      - POSTGRESQL_USERNAME=phatdo
+      - POSTGRESQL_PASSWORD=123123
+      - POSTGRESQL_DATABASE=ecommerce
+    ports:
+      - '5432:5432'
+    restart: always
+    networks:
+      - app-tier
+
+volumes:
+  postgresql_master_data:
+    driver: local
+# To connect postgresql-master you need to get ip address them. Using docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container-ID>

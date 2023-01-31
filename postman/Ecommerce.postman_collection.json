@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "9a4d734e-2d06-4fa9-b64f-beb23fccd394",
+		"name": "Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7842309"
+	},
+	"item": [
+		{
+			"name": "HERO",
+			"item": [
+				{
+					"name": "CREATE HERO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/hero",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"hero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/hero",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"hero"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HEADING",
+			"item": [
+				{
+					"name": "CREATE HEADING",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/heading",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"heading"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/heading",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"heading"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POPULAR SALE",
+			"item": [
+				{
+					"name": "CREATE POPULAR SALE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/popularsale",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"popularsale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/popularsale",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"popularsale"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "STORY",
+			"item": [
+				{
+					"name": "CREATE STORY",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/story",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"story"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/story",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"story"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TOP RATE SALES",
+			"item": [
+				{
+					"name": "CREATE TOP RATE SALE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/topratesale",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"topratesale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/topratesale",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"topratesale"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FOOTER",
+			"item": [
+				{
+					"name": "CREATE FOOTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/footer",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"footer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/footer",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"footer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
