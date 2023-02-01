@@ -3,3 +3,9 @@ export interface IHasItem<T> {
   items: T[];
   news: T[];
 }
+
+export interface IImagesPopular {
+  originalname: string;
+  mimetype: string;
+  size: number;
+}
