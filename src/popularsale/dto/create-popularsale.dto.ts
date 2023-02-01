@@ -1,13 +1,11 @@
 import { Type } from 'class-transformer';
 import {
-  IsArray,
   IsNotEmpty,
   IsNumber,
   IsNumberString,
   IsString,
-  ValidateNested,
 } from 'class-validator';
-import { ImagePopularSale } from 'src/entities/popularsale.entity';
+import { IImagesPopular } from 'src/interface/hasItem.type';
 
 export class CreatePopularSaleDto {
   @IsNotEmpty()
@@ -21,9 +19,9 @@ export class CreatePopularSaleDto {
   public readonly text: string;
 
   @IsNotEmpty()
-  @Type(() => String)
-  @IsNumberString()
-  public readonly rating: string;
+  @Type(() => Number)
+  @IsNumber()
+  public readonly rating: number;
 
   @IsNotEmpty()
   @Type(() => Number)
@@ -35,10 +33,7 @@ export class CreatePopularSaleDto {
   @IsString()
   public readonly btn: string;
 
-  @IsNotEmpty()
-  @Type(() => String)
-  @IsString()
-  public readonly img: string;
+  public readonly img: Express.Multer.File[] | string;
 
   @IsNotEmpty()
   @Type(() => String)
@@ -50,11 +45,7 @@ export class CreatePopularSaleDto {
   @IsNumber()
   public readonly reviews: number;
 
-  @IsNotEmpty()
-  @IsArray()
-  @ValidateNested({ each: true })
-  @Type(() => ImagePopularSale)
-  public readonly images: ImagePopularSale[];
+  public readonly images: Express.Multer.File[] | IImagesPopular[];
 
   @IsNotEmpty()
   @Type(() => String)

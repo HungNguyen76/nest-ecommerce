@@ -9,7 +9,7 @@ async function bootstrap() {
     cors: true,
   });
   app.setGlobalPrefix('api');
-  // app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe());
   app.useGlobalInterceptors(new ResponseInterceptor());
   app.useGlobalFilters(new HttpExceptionFilter());
   await app.listen(3000, () =>
