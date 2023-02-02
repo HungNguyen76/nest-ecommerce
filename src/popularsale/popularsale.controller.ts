@@ -6,10 +6,7 @@ import {
   BadRequestException,
   UseInterceptors,
   UploadedFiles,
-  ParseFilePipeBuilder,
-  HttpStatus,
   ParseFilePipe,
-  FileTypeValidator,
 } from '@nestjs/common';
 import { PopularSaleService } from './popularsale.service';
 import { CreatePopularSaleDto } from './dto/create-popularsale.dto';
