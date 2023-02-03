@@ -10,6 +10,7 @@ import { PopularSaleModule } from './popularsale/popularsale.module';
 import { StoryModule } from './story/story.module';
 import { TopRateSaleModule } from './topratesale/topratesale.module';
 import { FooterModule } from './footer/footer.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -41,6 +42,7 @@ import { FooterModule } from './footer/footer.module';
     StoryModule,
     TopRateSaleModule,
     FooterModule,
+    ProductModule,
   ],
 })
 export class AppModule {}

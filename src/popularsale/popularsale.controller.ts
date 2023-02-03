@@ -23,7 +23,11 @@ export class PopularSaleController {
   )
   async create(
     @Body() createPopularSaleDto: CreatePopularSaleDto,
-    @UploadedFiles(new ParseFilePipe())
+    @UploadedFiles(
+      new ParseFilePipe({
+        fileIsRequired: true,
+      }),
+    )
     file: { img: Express.Multer.File[]; images: Express.Multer.File[] },
   ): Promise<CreatePopularSaleDto> {
     try {
