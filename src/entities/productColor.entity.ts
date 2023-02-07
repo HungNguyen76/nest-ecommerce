@@ -1,5 +1,5 @@
 import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
-import { IImgProduct, ISize } from '../product/interface/product.interface';
+import { ISize } from '../product/interface/product.interface';
 import { ProductEntity } from './product.entity';
 
 @Entity({ name: 'tb_product_color' })
@@ -20,16 +20,16 @@ export class ProductColorEntity {
     default: [],
     comment: 'image colors detail',
   })
-  public readonly img: IImgProduct[];
+  public readonly img: string[];
 
   @Column({
-    name: 'size',
+    name: 'sizes',
     type: 'jsonb',
     array: false,
     default: [],
     comment: 'sizes element of product',
   })
-  public readonly colors: ISize[];
+  public readonly sizes: ISize[];
 
   @Column({
     name: 'price',

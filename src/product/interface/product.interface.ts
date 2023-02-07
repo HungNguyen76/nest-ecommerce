@@ -4,10 +4,6 @@ export enum TypeProduct {
   Tennis = 'Tennis',
 }
 
-export interface IImgProduct {
-  url: string;
-}
-
 export interface ISize {
   size: string;
   quantity: number;
@@ -15,7 +11,7 @@ export interface ISize {
 
 export interface IColors {
   id?: string;
-  img: IImgProduct[];
+  img: string[];
   sizes: ISize[];
   price: number;
 }

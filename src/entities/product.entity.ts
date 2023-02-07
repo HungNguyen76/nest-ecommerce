@@ -79,5 +79,5 @@ export class ProductEntity {
   @OneToMany(() => ProductColorEntity, (colors) => colors.product, {
     cascade: true,
   })
-  public readonly productColors: ProductColorEntity[];
+  public readonly productColors: ProductColorEntity;
 }
