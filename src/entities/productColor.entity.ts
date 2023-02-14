@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm';
 import { ISize } from '../product/interface/product.interface';
 import { ProductEntity } from './product.entity';
 
@@ -39,5 +39,6 @@ export class ProductColorEntity {
   public readonly price: number;
 
   @ManyToOne(() => ProductEntity, (product) => product.productColors)
-  public readonly product: ProductEntity;
+  @JoinColumn({ referencedColumnName: '_id' })
+  public readonly product: ProductEntity | string;
 }

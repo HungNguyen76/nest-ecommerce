@@ -31,9 +31,17 @@ export class ProductService {
         message: "This product isn't exist !",
       });
 
-    return await this.productRepository.save({
-      _id: createColorProductDto._idProduct,
-      productColors: createColorProductDto,
+    return await this.productColorRepository.insert({
+      ...createColorProductDto,
+      product: createColorProductDto._idProduct,
+    });
+  }
+
+  async getAll() {
+    return await this.productRepository.find({
+      relations: {
+        productColors: true,
+      },
     });
   }
 }

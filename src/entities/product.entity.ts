@@ -76,8 +76,6 @@ export class ProductEntity {
   @UpdateDateColumn({ name: 'updatedDate' })
   public readonly updatedDate: Date;
 
-  @OneToMany(() => ProductColorEntity, (colors) => colors.product, {
-    cascade: true,
-  })
-  public readonly productColors: ProductColorEntity;
+  @OneToMany(() => ProductColorEntity, (colors) => colors.product)
+  public readonly productColors: ProductColorEntity[];
 }

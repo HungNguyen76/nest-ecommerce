@@ -2,6 +2,7 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Get,
   ParseFilePipe,
   Post,
   UnsupportedMediaTypeException,
@@ -118,6 +119,15 @@ export class ProductController {
       return await this.productService.createColorProduct(
         createColorProductDto,
       );
+    } catch (error) {
+      throw new BadRequestException(error.message);
+    }
+  }
+
+  @Get()
+  async getProducts() {
+    try {
+      return await this.productService.getAll();
     } catch (error) {
       throw new BadRequestException(error.message);
     }
