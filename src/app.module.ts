@@ -11,6 +11,7 @@ import { StoryModule } from './story/story.module';
 import { TopRateSaleModule } from './topratesale/topratesale.module';
 import { FooterModule } from './footer/footer.module';
 import { ProductModule } from './product/product.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { ProductModule } from './product/product.module';
         database: configService.get('PG_DB_NAME'),
         entities: [__dirname + '/entities/*.entity{.ts,.js}'],
         ssl: true,
+        autoLoadEntities: true,
         synchronize: true,
       }),
       inject: [ConfigService],
@@ -43,6 +45,7 @@ import { ProductModule } from './product/product.module';
     TopRateSaleModule,
     FooterModule,
     ProductModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
