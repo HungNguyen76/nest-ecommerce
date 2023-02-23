@@ -14,10 +14,10 @@ export class UsersRepository extends Repository<UserEntity> {
     super(UserEntity, dataSource.createEntityManager());
   }
   async createUser(authCredentialsDto: AuthCredentialsDto): Promise<void> {
-    const { email, password } = authCredentialsDto;
+    const { username, email, password } = authCredentialsDto;
     const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(password, salt);
-    const user = this.create({ email, password: hashedPassword });
+    const user = this.create({ username, email, password: hashedPassword });
     try {
       await this.save(user);
     } catch (error) {

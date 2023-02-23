@@ -12,6 +12,11 @@ export class AuthCredentialsDto {
   @IsDefined()
   @IsNotEmpty()
   @IsString()
+  username: string;
+
+  @IsDefined()
+  @IsNotEmpty()
+  @IsString()
   @IsEmail()
   email: string;
 
