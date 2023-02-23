@@ -20,21 +20,25 @@ export class ProductService {
   }
 
   async createColorProduct(createColorProductDto: CreateColorProductDto) {
+    await this.findProductById(createColorProductDto._idProduct);
+
+    return await this.productColorRepository.insert({
+      ...createColorProductDto,
+      product: createColorProductDto._idProduct,
+    });
+  }
+
+  async findProductById(_id: string): Promise<ProductEntity> {
     const findOne = await this.productRepository.findOne({
-      where: {
-        _id: createColorProductDto._idProduct,
-      },
+      relations: ['productColors'],
+      where: { _id },
     });
 
     if (!findOne)
       throw new NotFoundException({
         message: "This product isn't exist !",
       });
-
-    return await this.productColorRepository.insert({
-      ...createColorProductDto,
-      product: createColorProductDto._idProduct,
-    });
+    else return findOne;
   }
 
   async getAll() {
@@ -43,5 +47,11 @@ export class ProductService {
         productColors: true,
       },
     });
+  }
+
+  async deleteOne(_id: string) {
+    const hadOne = await this.findProductById(_id);
+    await this.productRepository.remove(hadOne);
+    return;
   }
 }

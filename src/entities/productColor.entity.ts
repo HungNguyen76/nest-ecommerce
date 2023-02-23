@@ -38,7 +38,10 @@ export class ProductColorEntity {
   })
   public readonly price: number;
 
-  @ManyToOne(() => ProductEntity, (product) => product.productColors)
+  @ManyToOne(() => ProductEntity, (product) => product.productColors, {
+    cascade: true,
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ referencedColumnName: '_id' })
   public readonly product: ProductEntity | string;
 }

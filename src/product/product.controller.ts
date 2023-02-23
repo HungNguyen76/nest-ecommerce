@@ -2,7 +2,9 @@ import {
   BadRequestException,
   Body,
   Controller,
+  Delete,
   Get,
+  Param,
   ParseFilePipe,
   Post,
   UnsupportedMediaTypeException,
@@ -128,6 +130,15 @@ export class ProductController {
   async getProducts() {
     try {
       return await this.productService.getAll();
+    } catch (error) {
+      throw new BadRequestException(error.message);
+    }
+  }
+
+  @Delete(':_id')
+  async deleteOne(@Param('_id') _id: string) {
+    try {
+      return await this.productService.deleteOne(_id.toString());
     } catch (error) {
       throw new BadRequestException(error.message);
     }

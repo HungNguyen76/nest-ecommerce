@@ -30,7 +30,7 @@ import { UserModule } from './user/user.module';
         password: configService.get('PG_PASSWORD'),
         database: configService.get('PG_DB_NAME'),
         entities: [__dirname + '/entities/*.entity{.ts,.js}'],
-        // ssl: true,
+        ssl: true,
         autoLoadEntities: true,
         synchronize: true,
       }),
