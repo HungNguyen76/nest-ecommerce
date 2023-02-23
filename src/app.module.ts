@@ -12,6 +12,7 @@ import { TopRateSaleModule } from './topratesale/topratesale.module';
 import { FooterModule } from './footer/footer.module';
 import { ProductModule } from './product/product.module';
 import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -29,7 +30,7 @@ import { AuthModule } from './auth/auth.module';
         password: configService.get('PG_PASSWORD'),
         database: configService.get('PG_DB_NAME'),
         entities: [__dirname + '/entities/*.entity{.ts,.js}'],
-        ssl: true,
+        // ssl: true,
         autoLoadEntities: true,
         synchronize: true,
       }),
@@ -46,6 +47,7 @@ import { AuthModule } from './auth/auth.module';
     FooterModule,
     ProductModule,
     AuthModule,
+    UserModule,
   ],
 })
 export class AppModule {}
