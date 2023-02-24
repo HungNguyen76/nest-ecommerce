@@ -1,6 +1,5 @@
 import {
   IsDefined,
-  IsEmail,
   IsNotEmpty,
   IsString,
   Matches,
@@ -12,13 +11,8 @@ export class AuthCredentialsDto {
   @IsDefined()
   @IsNotEmpty()
   @IsString()
+  @MaxLength(32)
   username: string;
-
-  @IsDefined()
-  @IsNotEmpty()
-  @IsString()
-  @IsEmail()
-  email: string;
 
   @IsDefined()
   @IsNotEmpty()
